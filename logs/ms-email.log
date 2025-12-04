@@ -1,0 +1,45 @@
+2025-12-04T20:31:48,669 INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2025-12-04T20:31:48,726 INFO  com.ms.email.MsEmailApplication - Starting MsEmailApplication using Java 21.0.4 with PID 24232 (C:\Users\maria\email\target\classes started by maria in C:\Users\maria\email)
+2025-12-04T20:31:48,729 DEBUG com.ms.email.MsEmailApplication - Running with Spring Boot v3.3.4, Spring v6.1.13
+2025-12-04T20:31:48,732 INFO  com.ms.email.MsEmailApplication - No active profile set, falling back to 1 default profile: "default"
+2025-12-04T20:31:49,850 INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-12-04T20:31:49,925 INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 63 ms. Found 1 JPA repository interface.
+2025-12-04T20:31:50,850 INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-12-04T20:31:50,867 INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-12-04T20:31:50,874 INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2025-12-04T20:31:50,874 INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.30]
+2025-12-04T20:31:51,014 INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-12-04T20:31:51,018 INFO  org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2213 ms
+2025-12-04T20:31:51,305 INFO  org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-12-04T20:31:51,387 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.3.Final
+2025-12-04T20:31:51,445 INFO  org.hibernate.cache.internal.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-12-04T20:31:51,945 INFO  org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-12-04T20:31:52,009 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-12-04T20:31:52,267 INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@121cf6f4
+2025-12-04T20:31:52,271 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-12-04T20:31:53,539 INFO  org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-12-04T20:31:53,620 INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-12-04T20:31:54,176 WARN  org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-12-04T20:31:55,421 INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2025-12-04T20:31:55,469 INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2025-12-04T20:31:55,487 INFO  org.springframework.amqp.rabbit.connection.CachingConnectionFactory - Attempting to connect to: [leopard.lmq.cloudamqp.com:5671]
+2025-12-04T20:31:56,703 INFO  org.springframework.amqp.rabbit.connection.CachingConnectionFactory - Created new connection: rabbitConnectionFactory#24ea71d:0/SimpleConnection@6cca70e3 [delegate=amqp://gfwrzhgg@52.2.116.232:5671/gfwrzhgg, localPort=65062]
+2025-12-04T20:31:57,844 INFO  com.ms.email.MsEmailApplication - Started MsEmailApplication in 9.798 seconds (process running for 10.974)
+2025-12-04T20:32:21,097 INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-12-04T20:32:21,097 INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-12-04T20:32:21,099 INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2025-12-04T20:32:21,160 TRACE com.ms.email.controllers.EmailController - TRACE
+2025-12-04T20:32:21,160 DEBUG com.ms.email.controllers.EmailController - DEBUG
+2025-12-04T20:32:21,160 INFO  com.ms.email.controllers.EmailController - INFO
+2025-12-04T20:32:21,160 WARN  com.ms.email.controllers.EmailController - WARN
+2025-12-04T20:32:21,160 ERROR com.ms.email.controllers.EmailController - ERROR
+2025-12-04T20:32:21,160 FATAL com.ms.email.controllers.EmailController - FATAL
+2025-12-04T20:32:21,576 WARN  org.springframework.data.web.config.SpringDataJacksonConfiguration$PageModule$WarningLoggingModifier - Serializing PageImpl instances as-is is not supported, meaning that there is no guarantee about the stability of the resulting JSON structure!
+	For a stable JSON structure, please use Spring Data's PagedModel (globally via @EnableSpringDataWebSupport(pageSerializationMode = VIA_DTO))
+	or Spring HATEOAS and Spring Data's PagedResourcesAssembler as documented in https://docs.spring.io/spring-data/commons/reference/repositories/core-extensions.html#core.web.pageables.
+
+2025-12-04T20:35:37,468 INFO  org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer - Waiting for workers to finish.
+2025-12-04T20:35:37,562 INFO  org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer - Successfully waited for workers to finish.
+2025-12-04T20:35:37,889 INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-12-04T20:35:37,889 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-12-04T20:35:37,889 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
