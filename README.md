@@ -1,52 +1,56 @@
-  # ms-email
+# 📧 ms-email - Microserviço de Envio de Emails
 
 Microserviço responsável por consumir mensagens do RabbitMQ, processar dados de envio e realizar o envio de emails utilizando SMTP (Gmail).
 As informações de cada envio são persistidas em um banco PostgreSQL.
 
-Este projeto faz parte de um ambiente de microsserviços e foi desenvolvido para estudos utilizando Spring Boot, RabbitMQ, PostgreSQL e Java 21.
+Este projeto faz parte de um ambiente de microsserviços e foi desenvolvido para estudos utilizando Spring Boot, RabbitMQ, PostgreSQL, Log4j2 e Java 21.
 
 ---
 
 ✔️ Fluxo resumido
 
 1. Outro microserviço publica um objeto EmailDTO na fila RabbitMQ.
-2. O ms-email escuta essa fila automaticamente (@RabbitListener).
-3. Converte a mensagem em um modelo de domínio.
-4. Envia o email usando SMTP Gmail.
-5. Salva o status (SENT/ERROR) no banco PostgreSQL.
-6. Opcionalmente, permite envio manual via endpoint HTTP.
+2. O ms-email consome essa fila automaticamente via @RabbitListener.
+3. A mensagem é convertida em um modelo de domínio.
+4. O SMTP envia o e-mail via Gmail.
+5. O status é persistido no banco PostgreSQL com data e horário do envio.
+6. Também é possível o envio manual via endpoint HTTP.
 
 ---
 
 ## Tecnologias utilizadas
 
-- Java
-- Spring Boot
-- Spring Mail
+- Java 21
+- Spring Boot 3.3.4
+- Spring Web
+- Spring Mail (SMTP Gmail)
 - Spring AMQP
-- RabbitMQ
+- Spring Validation
 - JPA / Jakarta Persistence
 - Lombok
-
+- RabbitMQ
+- PostgreSQL
+- Log4j2
 ---
 
 ## Funcionalidades
 
-- Recebe mensagens da fila do RabbitMQ.
+- Recebe mensagens da fila do RabbitMQ ou endpoint REST.
 - Envia e-mails usando Spring Mail.
 - Salva histórico de envio no banco de dados.
-- Atualiza status (ENVIADO / ERRO).
+- Atualiza status.
+- Registra eventos, erros e fluxo da aplicação pelo logging configurado via Log4j2.
 
 ---
 
-## Configurações do application.properties
+## Configurações do _application.properties_
 
 ```
 server.port=8080
 
 spring.datasource.url=jdbc:postgresql://localhost:5432/ms-email
 spring.datasource.username=postgres
-spring.datasource.password=
+spring.datasource.password=SUA_SENHA
 spring.jpa.hibernate.ddl-auto=update
 
 spring.mail.host=smtp.gmail.com
@@ -57,12 +61,17 @@ spring.mail.properties.mail.smtp.auth=true
 spring.mail.properties.mail.smtp.starttls.enable=true
 
 spring.rabbitmq.addresses=amqps://SEU_URL_RABBITMQ
-spring.rabbitmq.queue=
+spring.rabbitmq.queue=SUA_QUEUE
+
+logging.level.com.ms.email= TRACE
+logging.level.root= DEBUG
 ```
 
 ---
 
-## Exemplo de mensagem enviada à fila
+## Endpoint REST
+
+Exemplo de mensagem enviada à fila:
 
 ```json
 {
@@ -74,7 +83,7 @@ spring.rabbitmq.queue=
 }
 ```
 
-## Exemplo de resposta
+Exemplo de retorno bem-sucedido:
 
 ```json
 {
@@ -96,4 +105,4 @@ spring.rabbitmq.queue=
 Projeto desenvolvido seguindo o tutorial do canal:  
 https://www.youtube.com/@MichelliBrito
 
-O objetivo foi aprender na prática: arquitetura de microsserviços, integração com RabbitMQ, envio de emails com Spring Boot, persistência com JPA e PostgreSQL, padrões e boas práticas.
+O objetivo foi aprender na prática: arquitetura de microsserviços, mensageria com RabbitMQ, envio de emails com Spring Boot, persistência com JPA e PostgreSQL, logs com Log4j2, padrões e boas práticas.
